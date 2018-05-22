@@ -7,4 +7,5 @@ return [
     'passthrough' => \Xolura\InputModifier\Modifiers\Passthrough::class,
     'removeSpaces' => \Xolura\InputModifier\Modifiers\RemoveSpaces::class,
     'phoneNumber' => \Xolura\InputModifier\Modifiers\PhoneNumber::class,
+    'date' => \Xolura\InputModifier\Modifiers\Date::class,
 ];
