@@ -4,7 +4,7 @@ namespace Xolura\InputModifier\Modifiers;
 
 use Xolura\InputModifier\Contracts\Modifier;
 
-class Capitalize implements Modifier {
+class RemoveSpaces implements Modifier {
     /*
      * The value provided in request
      */
@@ -25,7 +25,7 @@ class Capitalize implements Modifier {
 
     public function modify() {
 
-        return is_string($this->value) ? ucwords(strtolower($this->value)) : $this->value;
+        return is_string($this->value) ? str_replace(' ', '', $this->value) : $this->value;
     }
 
     /*

@@ -70,14 +70,17 @@ abstract class ModifierAbstract {
             $modifierStrings = explode(':', $modifierString);
             $modifierName = $modifierStrings[0];
 
-            $modifierClass = $modifiersClassesConfig[$modifierName];
+            if (isset($modifiersClassesConfig[$modifierName])) {
 
-            $modifierOptions = isset($modifierStrings[1]) ? explode(',', $modifierStrings[1]) : [];
+                $modifierClass = $modifiersClassesConfig[$modifierName];
 
-            $modifierClasses[] = [
-                'class' => $modifierClass,
-                'options' => $modifierOptions
-            ];
+                $modifierOptions = isset($modifierStrings[1]) ? explode(',', $modifierStrings[1]) : [];
+
+                $modifierClasses[] = [
+                    'class' => $modifierClass,
+                    'options' => $modifierOptions
+                ];
+            }
         }
 
         return $modifierClasses;
