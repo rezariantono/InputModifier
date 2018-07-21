@@ -8,4 +8,5 @@ return [
     'removeSpaces' => \Xolura\InputModifier\Modifiers\RemoveSpaces::class,
     'phoneNumber' => \Xolura\InputModifier\Modifiers\PhoneNumber::class,
     'boolean' => \Xolura\InputModifier\Modifiers\Boolean::class,
+    'email' => \Xolura\InputModifier\Modifiers\Email::class,
 ];
