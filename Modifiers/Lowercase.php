@@ -4,7 +4,7 @@ namespace Xolura\InputModifier\Modifiers;
 
 use Xolura\InputModifier\Contracts\Modifier;
 
-class Uppercase implements Modifier {
+class Lowercase implements Modifier {
     /*
      * The value provided in request
      */
