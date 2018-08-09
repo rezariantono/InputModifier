@@ -10,4 +10,5 @@ return [
     'phoneNumber' => \Xolura\InputModifier\Modifiers\PhoneNumber::class,
     'boolean' => \Xolura\InputModifier\Modifiers\Boolean::class,
     'email' => \Xolura\InputModifier\Modifiers\Email::class,
+    'json' => \Xolura\InputModifier\Modifiers\Json::class,
 ];
