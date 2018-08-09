@@ -33,10 +33,7 @@ class Email implements Modifier {
      */
 
     public function setOptions(Array $options) {
-
-        if (isset($options[0])) {
-            $this->countryCode = $options[0];
-        }
+        
     }
 
 }
