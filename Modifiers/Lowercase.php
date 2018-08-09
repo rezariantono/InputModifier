@@ -4,7 +4,7 @@ namespace Xolura\InputModifier\Modifiers;
 
 use Xolura\InputModifier\Contracts\Modifier;
 
-class Json implements Modifier {
+class Lowercase implements Modifier {
     /*
      * The value provided in request
      */
@@ -25,7 +25,7 @@ class Json implements Modifier {
 
     public function modify() {
 
-        return is_array($this->value) ? json_encode($this->value) : $this->value;
+        return is_string($this->value) ? strtolower($this->value) : $this->value;
     }
 
     /*

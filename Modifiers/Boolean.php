@@ -4,13 +4,12 @@ namespace Xolura\InputModifier\Modifiers;
 
 use Xolura\InputModifier\Contracts\Modifier;
 
-class PhoneNumber implements Modifier {
+class Boolean implements Modifier {
     /*
      * The value provided in request
      */
 
     protected $value;
-    protected $countryCode;
 
     /*
      * Create a new modifier instance
@@ -25,12 +24,9 @@ class PhoneNumber implements Modifier {
      */
 
     public function modify() {
-
-        $this->value = str_replace('-', '', $this->value);
-        $this->value = str_replace(' ', '', $this->value);
-        
-        if (is_string($this->value) && substr($this->value, 0, 1) == '0') {
-            return $this->countryCode . substr($this->value, 1);
+       
+        if (is_string($this->value)) {
+            $this->value = (bool) $this->value;
         }
         
         return $this->value;
@@ -41,10 +37,7 @@ class PhoneNumber implements Modifier {
      */
 
     public function setOptions(Array $options) {
-
-        if (isset($options[0])) {
-            $this->countryCode = $options[0];
-        }
+        
     }
 
 }
