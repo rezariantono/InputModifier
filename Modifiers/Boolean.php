@@ -24,11 +24,11 @@ class Boolean implements Modifier {
      */
 
     public function modify() {
-       
+
         if (is_string($this->value)) {
             $this->value = (bool) $this->value;
         }
-        
+
         return $this->value;
     }
 
