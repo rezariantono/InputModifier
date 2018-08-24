@@ -4,7 +4,7 @@ namespace Xolura\InputModifier\Modifiers;
 
 use Xolura\InputModifier\Contracts\Modifier;
 
-class Boolean implements Modifier {
+class Email implements Modifier {
     /*
      * The value provided in request
      */
@@ -25,11 +25,7 @@ class Boolean implements Modifier {
 
     public function modify() {
 
-        if (is_string($this->value)) {
-            $this->value = (bool) $this->value;
-        }
-
-        return $this->value;
+        return is_string($this->value) ? strtolower(trim($this->value)) : $this->value;
     }
 
     /*

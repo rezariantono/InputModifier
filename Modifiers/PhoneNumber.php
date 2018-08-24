@@ -42,6 +42,10 @@ class PhoneNumber implements Modifier {
 
     public function setOptions(Array $options) {
 
+        /*
+         * 0 : country code
+         */
+
         if (isset($options[0])) {
             $this->countryCode = $options[0];
         }

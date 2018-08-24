@@ -4,12 +4,14 @@ namespace Xolura\InputModifier\Modifiers;
 
 use Xolura\InputModifier\Contracts\Modifier;
 
-class Boolean implements Modifier {
+class Number implements Modifier {
     /*
      * The value provided in request
      */
 
     protected $value;
+    
+    protected $decimalPlaces = 1;
 
     /*
      * Create a new modifier instance
@@ -25,11 +27,7 @@ class Boolean implements Modifier {
 
     public function modify() {
 
-        if (is_string($this->value)) {
-            $this->value = (bool) $this->value;
-        }
-
-        return $this->value;
+        return round($this->value, $this->decimalPlaces);
     }
 
     /*
@@ -38,6 +36,13 @@ class Boolean implements Modifier {
 
     public function setOptions(Array $options) {
         
+        /*
+         * 0 : decimal places
+         */
+
+        if (isset($options[0])) {
+            $this->decimalPlaces = $options[0];
+        }
     }
 
 }
