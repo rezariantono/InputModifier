@@ -25,7 +25,7 @@ class Json implements Modifier {
 
     public function modify() {
 
-        return is_array($this->value) ? json_encode($this->value) : $this->value;
+        return (is_string($this->value) ? json_decode($this->value) : $this->value);
     }
 
     /*
